@@ -2,6 +2,20 @@
 *:after {
     box-sizing: border-box;
 }
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #4B4949;
+    border-radius: 10px;
+}
+  
+*::-webkit-scrollbar-thumb {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border: 3px solid #FFFFFF;
+}
 
 a,
 a:visited {
@@ -98,16 +112,15 @@ body {
 }
 
 
-
 // =================== main ====================//
 .main {
     flex: 1 1 auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-between;    
 
     &__nav {
-        width: 244px;
+        width: 150px;
         background-color: #181818;
         padding: 20px 0 20px 36px;
     }
@@ -119,7 +132,7 @@ body {
     }
 
     &__sidebar {
-        max-width: 418px;
+        max-width: 350px;
         padding: 20px 90px 20px 78px;
     }
 }
@@ -256,6 +269,8 @@ body {
 }
 
 .filter {
+    
+    position: relative;
 
     &__title {
         font-style: normal;
@@ -278,8 +293,84 @@ body {
             margin-right: 10px;
         }
     }
+    
+    &__filter-author {
+        position: absolute;        
+        top: 49px;
+        left: 92px;
+        width: 248px;
+        height: 305px;
+        background: #313131;
+        border-radius: 12px;
+        padding-top: 36px;
+        padding-bottom: 36px;
+        padding-left: 34px;
+        padding-right: 34px;               
+
+    }
+    &__filter-genre {
+        position: absolute;        
+        top: 49px;
+        left: 392px;
+        width: 248px;
+        height: 305px;
+        background: #313131;
+        border-radius: 12px;
+        padding-top: 36px;
+        padding-bottom: 36px;
+        padding-left: 34px;
+        padding-right: 34px;               
+
+    }
+
+    &__filter-year {
+        position: absolute;        
+        top: 49px;
+        left: 240px;
+        width: 403px;
+        height: 92px;
+        background: #313131;
+        border-radius: 12px;
+                 
+
+    }
+
+    &__filter__list {
+        height: 100%;
+        overflow: auto;
+        font-family: 'Stratos-Medium';     
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;       
+        color: #FFFFFF;  
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        scrollbar-width: thin;    
+          
+    }
+
+    &__radio {
+   
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Stratos-Medium';     
+        font-weight: 400;
+        font-size: 20px;    
+        padding: 34px; 
+        
+
+    }
+
 }
 
+
+.btn-text_activ {
+    border-color: #9A48F1;
+    color: #B672FF;
+   
+    
+}
 
 .content {
 
