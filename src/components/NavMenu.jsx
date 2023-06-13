@@ -1,5 +1,5 @@
-const NavMenu = () => {
-   
+
+const NavMenu = () => {   
     return (
     <div className="nav__menu menu">
         <ul className="menu__list">            
