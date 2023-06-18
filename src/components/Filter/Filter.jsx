@@ -1,4 +1,5 @@
 import { useState } from "react";
+import s from './Filter.module.scss';
 
 const geners = [
     'Rock',
@@ -33,13 +34,13 @@ const Filter = () => {
     };
     //console.log(visibleFilter);
     return (
-        <div className="centerblock__filter filter">
-            <div className="filter__title">Искать по:</div>
+        <div className={`${s.centerblock__filter} ${s.filter}`}>
+            <div className={s.filter__title}>Искать по:</div>
            
-            <div className={`filter__button button-author _btn-text ${visibleFilter === 'author' ? 'btn-text_activ' : ''}`}  onClick={() => toggleVisibleFilter("author")}>исполнителю</div>
+            <div className={`${s.filter__button} ${s['button-author']} ${s['_btn-text']} ${visibleFilter === 'author' ? s['btn-text_activ'] : ''}`}  onClick={() => toggleVisibleFilter("author")}>исполнителю</div>
             {visibleFilter === "author" && 
-                <div className="filter__filter-author">                
-                    <div className="filter__filter__list">
+                <div className={s['filter__filter-author']}>                
+                    <div className={s['filter__filter__list']}>
                         <div>Frank Sinatra</div>
                         <div>Michael Jackson</div>
                         <div>Calvin Harris</div>
@@ -59,15 +60,14 @@ const Filter = () => {
                 </div>  
             }
                         
-            <div className={`filter__button button-author _btn-text ${visibleFilter === 'year' ? 'btn-text_activ' : ''}`}  onClick={() => toggleVisibleFilter("year")}>году выпуска</div>
+            <div className={`${s.filter__button} ${s['button-author']} ${s['_btn-text']} ${visibleFilter === 'year' ? s['btn-text_activ'] : ''}`}  onClick={() => toggleVisibleFilter("year")}>году выпуска</div>
             {visibleFilter === "year" && 
-                <div className="filter__filter-year"> 
-                    <div className="filter__radio">
+                <div className={s['filter__filter-year']}> 
+                    <div className={s.filter__radio}>
                         <div>
                             <input id="radio-1" type ="radio" name="radio" value="1" />
                             <label htmlFor ="radio-1">Более новые</label> 
-                        </div>
-                               
+                        </div>                               
                         <div>
                             <input id="radio-2" type ="radio" name="radio" value="2" />
                             <label htmlFor ="radio-2">Более старые </label> 
@@ -78,10 +78,10 @@ const Filter = () => {
                 </div>  
             }    
 
-            <div className={`filter__button button-author _btn-text ${visibleFilter === 'genre' ? 'btn-text_activ' : ''}`}  onClick={() => toggleVisibleFilter("genre")}>жанру</div>
+            <div className={`${s.filter__button} ${s['button-author']} ${s['_btn-text']} ${visibleFilter === 'genre' ? s['btn-text_activ'] : ''}`}  onClick={() => toggleVisibleFilter("genre")}>жанру</div>
             {visibleFilter === "genre" && 
-                <div className="filter__filter-genre">                
-                    <div className="filter__filter__list">
+                <div className={s['filter__filter-genre']}>                
+                    <div className={s['filter__filter__list']}>
                         {
                             geners.map((item,index) => <div key={index}>{item}</div>)
                         }
