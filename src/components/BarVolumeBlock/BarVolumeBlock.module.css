@@ -1,0 +1,22 @@
+.volume__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+}
+.volume__image {
+  width: 13px;
+  height: 18px;
+  margin-right: 17px;
+}
+.volume__svg {
+  width: 13px;
+  height: 18px;
+  fill: transparent;
+}
+.volume__progress {
+  width: 109px;
+}
+.volume__progress-line {
+  width: 109px;
+}/*# sourceMappingURL=BarVolumeBlock.module.css.map */

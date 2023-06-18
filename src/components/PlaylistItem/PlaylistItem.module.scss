@@ -1,0 +1,111 @@
+
+.playlist {
+
+    &__item {
+        width: 100%;
+        display: block;
+        margin-bottom: 12px;
+        
+    }
+
+    &__track {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+.track {
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 447px;
+    }
+
+    &__title-image {
+        width: 51px;
+        height: 51px;
+        padding: 16px;
+        background: #313131;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 17px;
+    }
+
+    &__title-svg {
+        width: 18px;
+        height: 17px;
+        fill: transparent;
+        stroke: #4E4E4E;
+    }
+
+    //&__title-text {}
+
+    &__title-link {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFFFFF;
+    }
+
+    &__title-span {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #4E4E4E;
+    }
+
+    &__author {
+        width: 321px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &__author-link {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFFFFF;
+        text-align: left;
+    }
+
+    &__album {
+        width: 245px;
+    }
+
+    &__album-link {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #696969;
+    }
+
+    //&__time {}
+
+    &__time-svg {
+        width: 14px;
+        height: 12px;
+        margin-right: 17px;
+        fill: transparent;
+        stroke: #696969;
+    }
+
+    &__time-text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: right;
+        color: #696969;
+
+    }
+}
