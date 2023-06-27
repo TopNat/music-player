@@ -1,23 +1,26 @@
-import Filter from "./../Filter";
-import PlaylistItem from "./../PlaylistItem";
-//import { useState, useEffect } from "react";
-import Skeleton from "./../Skeleton/Skeleton";
-import s from './Centerblock.module.scss';
+//import Filter from '../../components/Filter/Filter';
+import PlaylistItem from '../../components/PlaylistItem/PlaylistItem';
+import s from './playListPage.module.scss';
 import { playlistData, titlePlayList } from "../../constants";
-import { Search } from "../Search";  
-  
+import NavBar from '../../components/NavBar/NavBar';
+import Bar from '../../components/Bar/Bar';
+import { Search } from '../../components/Search';
+import SideBar from '../../components/SideBar/SideBar';
+import { useParams } from 'react-router-dom';
 
+function playListPage() {
+    const params = useParams();
 
-const Centerblock = ({isLoading}) => {
-    
-    const ARR = [3];    
-  
+    console.log(params.id);
     return (
+        <div className={s.container}>
+            <main className={s.main}>       
+                <NavBar />          
+
         <div className={`${s.main__centerblock} ${s.centerblock}`}>
         <Search />
-
-        <h2 className={s.centerblock__h2}>{titlePlayList[0].title}</h2>
-        <Filter />           
+        <h2 className={s.centerblock__h2}>{titlePlayList[params.id-1].title}</h2>     
+        
           
         <div className={s.centerblock__content}>  
             <div className={`${s.content__title} ${s['playlist-title']}`}>
@@ -29,21 +32,21 @@ const Centerblock = ({isLoading}) => {
                     <use xlinkHref="img/icon/sprite.svg#icon-watch"></use>
                 </svg>
             </div>
-            </div>
-            {isLoading ? ARR.map((item,index) => <Skeleton  className={`${s.content__playlist} ${s.playlist}`} key = {index} />) : 
+            </div>           
                 <div className={`${s.content__playlist} ${s.playlist}`}>  
                 {
                     playlistData.map((item,index) => <PlaylistItem track={item.track} author={item.author} album={item.album} time={item.time} key={index} />)
                 
-                }              
-                    
+                }            
                 </div>  
-             }  
         </div>
-            
     </div>
-        );
-};
+    <SideBar titlePage='playlist'/>  
+    </main>
+    <Bar />
+    <footer className={s.footer}></footer>  
+    </div>     
+    );
+}
 
-
-export default Centerblock;
+export default playListPage;

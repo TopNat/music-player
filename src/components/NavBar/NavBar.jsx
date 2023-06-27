@@ -14,7 +14,10 @@ const NavBar = () => {
     return (
             <nav className={`${s.main__nav} ${s.nav}`}>
                 <div className={`${s.nav__logo} ${s.logo}`}>
-                    <img className={s.logo__image} src="img/logo.png" alt="logo" />
+                   
+                    <img className={s.logo__image} src="img\logo.png" alt="logo" />                
+                                         
+                    
                 </div>
                 <div className={`${s.nav__burger} ${s.burger}`}  onClick={() => toggleVisibleMenu("menu")}>
                     <span className={s.burger__line}></span>

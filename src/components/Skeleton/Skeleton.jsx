@@ -6,8 +6,8 @@ const Skeleton = (props) => (
   <ContentLoader 
     speed={2}
     width={1200}
-    height={250}
-    viewBox="0 0 1200 250"
+    height={120}
+    viewBox="0 0 1200 120"
     backgroundColor="#f3f3f3"
     foregroundColor="#313131"
     {...props}
