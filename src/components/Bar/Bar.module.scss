@@ -20,7 +20,11 @@
         height: 5px;
         background: #2E2E2E;
     }
-
+    &__player-progress_fill {
+    
+        height: 5px;
+        background: #AD61FF;
+    }
     &__player-block {
         height: 73px;
         display: flex;
