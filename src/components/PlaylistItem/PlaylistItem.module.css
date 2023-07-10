@@ -39,6 +39,13 @@
   line-height: 24px;
   color: #FFFFFF;
 }
+.track__title-link_dark {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
 .track__title-span {
   font-style: normal;
   font-weight: 400;
@@ -57,6 +64,14 @@
   font-size: 16px;
   line-height: 24px;
   color: #FFFFFF;
+  text-align: left;
+}
+.track__author-link_dark {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
   text-align: left;
 }
 .track__album {

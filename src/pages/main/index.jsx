@@ -6,9 +6,14 @@ import Centerblock from '../../components/Centerblock';
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { TIMESKELETON } from "../../constants";
+import { useThemeContext } from '../../ThemeContext';
+
 
 
 function MainP() {
+
+    const {theme} = useThemeContext();
+    //console.log(theme);
 
     const [isLoadingList, setIsLoadingList] = useState(true); 
    
@@ -19,8 +24,9 @@ function MainP() {
     
     
     return (
-        <div className={s.container}>
-            <main className={s.main}>       
+        <div className={s.container} style={{backgroundColor: `${theme.background}`, color: `${theme.color}`}}>
+            <main className={s.main}>  
+              
                 <NavBar />  
                 <Routes> 
                     <Route path="/" element={<Centerblock isLoading={isLoadingList}/>} />                    

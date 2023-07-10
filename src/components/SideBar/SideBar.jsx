@@ -2,16 +2,17 @@
 import { NavLink } from "react-router-dom";
 import SkeletonPlayList from "./../Skeleton/SkeletonPlayList";
 import s from './SideBar.module.scss';
+import { useThemeContext } from "../../ThemeContext";
 //import { TIMESKELETON } from "../../constants";
 
 const SideBar = ({isLoading, titlePage='main'}) => {
 //console.log(titlePage);
+const { theme } = useThemeContext();
     return (
     <div className={`${s.main__sidebar} ${s.sidebar}`}>
         <div className={s.sidebar__personal}>
-            <p className={s['sidebar__personal-name']}>Sergey.Ivanov</p>
-            <div className={s.sidebar__avatar}>
-                
+            <p className={theme.name === 'light' ? `${s['sidebar__personal-name_light']}` : `${s['sidebar__personal-name']}`}>Sergey.Ivanov</p>
+            <div className={s.sidebar__avatar}>                
             </div>
         </div>
 

@@ -7,7 +7,6 @@ import { playlistData, titlePlayList } from "../../constants";
 import { Search } from "../Search";  
   
 
-
 const Centerblock = ({isLoading}) => {
     
     const ARR = [3];    

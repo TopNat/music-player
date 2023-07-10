@@ -54,6 +54,14 @@
         color: #FFFFFF;
     }
 
+    &__title-link_dark {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+    }    
+
     &__title-span {
         font-style: normal;
         font-weight: 400;
@@ -74,6 +82,15 @@
         font-size: 16px;
         line-height: 24px;
         color: #FFFFFF;
+        text-align: left;
+    }
+
+    &__author-link_dark {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
         text-align: left;
     }
 

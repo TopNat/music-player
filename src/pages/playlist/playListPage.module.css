@@ -1,3 +1,18 @@
+.container {
+  max-width: 1920px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  background-color: #181818;
+}
+
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
 .main__centerblock {
   width: auto;
   flex-grow: 3;
@@ -57,4 +72,4 @@
 .col04 {
   width: 60px;
   text-align: end;
-}/*# sourceMappingURL=Centerblock.module.css.map */
+}/*# sourceMappingURL=playListPage.module.css.map */

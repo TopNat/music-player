@@ -1,29 +1,9 @@
 import { useState } from "react";
 import s from './Filter.module.scss';
+import { geners } from "../../constants";
+import { useThemeContext } from '../../ThemeContext';
 
-const geners = [
-    'Rock',
-    'Pop',
-    'Rap & Hip-Hop',
-    'Easy Listening',
-    'Dance & House',
-    'Instrumental',
-    'Metal',
-    'Alternative',
-    'Dubstep',
-    'Jazz & Blues',
-    'Drum & Bass',
-    'Trance',
-    'Chanson',
-    'Ethnic',
-    'Acoustic & Vocal',
-    'Reggae',
-    'Classical',
-    'Indie Pop',
-    'Speech',
-    'Electropop & Disco',
-    'Other'
-  ]
+
 
 const Filter = () => {
 
@@ -32,12 +12,13 @@ const Filter = () => {
     const toggleVisibleFilter = (filter) => {  
         setVisibleFilter(visibleFilter === filter ? null : filter);
     };
+    const { theme } = useThemeContext();
     //console.log(visibleFilter);
     return (
         <div className={`${s.centerblock__filter} ${s.filter}`}>
             <div className={s.filter__title}>Искать по:</div>
            
-            <div className={`${s.filter__button} ${s['button-author']} ${s['_btn-text']} ${visibleFilter === 'author' ? s['btn-text_activ'] : ''}`}  onClick={() => toggleVisibleFilter("author")}>исполнителю</div>
+            <div className={`${theme.name === 'light' ? s.filter__button_light : s.filter__button} ${s['button-author']} ${s['_btn-text']} ${visibleFilter === 'author' ? s['btn-text_activ'] : ''}`}  onClick={() => toggleVisibleFilter("author")}>исполнителю</div>
             {visibleFilter === "author" && 
                 <div className={s['filter__filter-author']}>                
                     <div className={s['filter__filter__list']}>
@@ -60,7 +41,7 @@ const Filter = () => {
                 </div>  
             }
                         
-            <div className={`${s.filter__button} ${s['button-author']} ${s['_btn-text']} ${visibleFilter === 'year' ? s['btn-text_activ'] : ''}`}  onClick={() => toggleVisibleFilter("year")}>году выпуска</div>
+            <div className={`${theme.name === 'light' ? s.filter__button_light : s.filter__button} ${s['button-author']} ${s['_btn-text']} ${visibleFilter === 'year' ? s['btn-text_activ'] : ''}`}  onClick={() => toggleVisibleFilter("year")}>году выпуска</div>
             {visibleFilter === "year" && 
                 <div className={s['filter__filter-year']}> 
                     <div className={s.filter__radio}>
@@ -78,7 +59,7 @@ const Filter = () => {
                 </div>  
             }    
 
-            <div className={`${s.filter__button} ${s['button-author']} ${s['_btn-text']} ${visibleFilter === 'genre' ? s['btn-text_activ'] : ''}`}  onClick={() => toggleVisibleFilter("genre")}>жанру</div>
+            <div className={`${theme.name === 'light' ? s.filter__button_light : s.filter__button} ${s['button-author']} ${s['_btn-text']} ${visibleFilter === 'genre' ? s['btn-text_activ'] : ''}`}  onClick={() => toggleVisibleFilter("genre")}>жанру</div>
             {visibleFilter === "genre" && 
                 <div className={s['filter__filter-genre']}>                
                     <div className={s['filter__filter__list']}>

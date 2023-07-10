@@ -2,6 +2,7 @@
 import styles from './Bar.module.scss';
 import BarVolumeBlock from "./../BarVolumeBlock";
 import { useState, useRef} from 'react';
+import { useThemeContext } from '../../ThemeContext';
 
 
 
@@ -10,11 +11,8 @@ const Bar = () => {
     const refProgress = useRef(null);
     const refAudio = useRef(null);
 
-   /* useEffect(() => {
-       
-        refProgress.current.styles = `width: ${progress} px`;
+    const { theme } = useThemeContext();
 
-    });*/ 
 
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);   
@@ -43,7 +41,7 @@ const Bar = () => {
       };       
 
     return (
-<div className={styles.bar}>
+<div className={theme.name === 'dark' ? `${styles.bar}` : `${styles.bar_light}`}>
         <audio ref={refAudio} src="audio/Bobby_Marleni_-_Dropin.mp3"></audio>
     <div className={styles.bar__content}>
         <div className={styles['bar__player-progress']}>
@@ -97,10 +95,11 @@ const Bar = () => {
                             </svg>
                         </div>
                             <div className={styles['track-play__author']}>
-                            <a className={styles['track-play__author-link']} href="http://">Ты та...</a>
+                           
+                            <a className={theme.name === 'dark' ? `${styles['track-play__author-link']}` : `${styles['track-play__author-link_light']}`} href="http://">Ты та...</a>
                         </div>
                         <div className={styles['track-play__album']}>
-                            <a className={styles['track-play__album-link']} href="http://">Баста</a>
+                            <a className={theme.name === 'dark' ? `${styles['track-play__album-link']}` : `${styles['track-play__album-link_light']}`} href="http://">Баста</a>
                         </div>
                     </div>
 

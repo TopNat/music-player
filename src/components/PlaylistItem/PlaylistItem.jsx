@@ -1,6 +1,9 @@
+import { useThemeContext } from '../../ThemeContext';
 import s from './PlaylistItem.module.scss';
 
 const PlaylistItem = (props) => {
+    const { theme } = useThemeContext();
+
     return (
         <div className={s.playlist__item}>
         <div className={`${s.playlist__track} ${s.track}`}>                        
@@ -11,11 +14,11 @@ const PlaylistItem = (props) => {
                     </svg>
                 </div>
                 <div className={s['track__title-text']}>
-                    <a className={s['track__title-link']} href="http://">{props.track} <span className={s['track__title-span']}></span></a>
+                    <a className={theme.name === 'dark' ? `${s['track__title-link']}` : `${s['track__title-link_dark']}`} href="http://">{props.track} <span className={s['track__title-span']}></span></a>
                 </div>
             </div>
             <div className={s.track__author}>
-                <a className={s['track__author-link']} href="http://">{props.author}</a>
+                <a className={theme.name === 'dark' ? `${s['track__author-link']}` : `${s['track__author-link_dark']}`} href="http://">{props.author}</a>
             </div>
             <div className={s.track__album}>
                 <a className={s['track__album-link']} href="http://">{props.album}</a>

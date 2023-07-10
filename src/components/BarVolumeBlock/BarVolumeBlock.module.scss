@@ -1,3 +1,7 @@
+._btn {
+    cursor: pointer;
+}
+
 .volume {
 
     &__content {
@@ -26,5 +30,6 @@
 
     &__progress-line {
         width: 109px;
+        
     }
 }

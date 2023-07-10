@@ -6,7 +6,13 @@
     background: rgba(28, 28, 28, 0.5);
 }
 
-
+.bar_light {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+}
 .bar {
 
     &__content {
@@ -174,7 +180,14 @@
         color: #FFFFFF;
         white-space: nowrap;
     }
-
+    &__author-link_light {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        white-space: nowrap;
+    }
     &__album {
         grid-area: album;
         min-width: 49px;
@@ -187,6 +200,14 @@
         line-height: 24px;
         color: #FFFFFF;
     }
+
+    &__album-link_light {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 24px;
+        color: #000000;
+    } 
 
     &__like-dis {
         display: flex;

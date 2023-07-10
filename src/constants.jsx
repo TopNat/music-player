@@ -15,3 +15,27 @@ export const titlePlayList = [
     {id: 4, title: 'Инди-заряд'},
     {id: 5, title: 'Мой плейлист'}
 ];
+
+export const geners = [
+    'Rock',
+    'Pop',
+    'Rap & Hip-Hop',
+    'Easy Listening',
+    'Dance & House',
+    'Instrumental',
+    'Metal',
+    'Alternative',
+    'Dubstep',
+    'Jazz & Blues',
+    'Drum & Bass',
+    'Trance',
+    'Chanson',
+    'Ethnic',
+    'Acoustic & Vocal',
+    'Reggae',
+    'Classical',
+    'Indie Pop',
+    'Speech',
+    'Electropop & Disco',
+    'Other'
+  ]
