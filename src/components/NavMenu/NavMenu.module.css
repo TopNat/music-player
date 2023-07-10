@@ -1,0 +1,29 @@
+.menu__list {
+  padding: 18px 0 10px 0;
+}
+.menu__item {
+  padding: 5px 0;
+  margin-bottom: 16px;
+}
+.menu__link {
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.menu__link_dark {
+  color: #000000;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.menu__btn-sun, .menu__btn-moon {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.nav__menu {
+  display: block;
+  visibility: visible;
+}/*# sourceMappingURL=NavMenu.module.css.map */

@@ -1,0 +1,38 @@
+
+
+.menu {
+
+    &__list {
+        padding: 18px 0 10px 0;
+    }
+
+    &__item {
+        padding: 5px 0;
+        margin-bottom: 16px;
+    }
+
+    &__link {
+        color: #FFFFFF;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    &__link_dark {
+        color: #000000;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+        
+    &__btn-sun,
+    &__btn-moon {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+    }    
+}
+
+.nav__menu {
+    display: block;
+    visibility: visible;
+}

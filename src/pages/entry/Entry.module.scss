@@ -1,0 +1,86 @@
+.main_entry {
+    width: 100vw;    
+    height: 100vh;    
+    background-color: #383838;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.entry {
+
+    width: 366px;
+    height: 439px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+
+}
+
+.logo {
+    width: 140px;
+    height: 21px;    
+    background-color: transparent;
+    margin-top: 42px;
+    margin-bottom: 42px;
+   
+    &__image {
+        width: 140px;
+        height: 21px;
+        color: #181818;
+    }     
+}
+.login {
+    border: 0px;
+    border-bottom: 1px solid #D0CECE;
+    width: 278px;
+    font-weight: 400;  
+    font-size: 18px;
+    color: #D0CECE;
+    margin-bottom: 38px;
+}
+.login::placeholder {
+    color:  #D0CECE;
+}
+
+.pasword {
+    border: 0px;
+    border-bottom: 1px solid #D0CECE;
+    width: 278px;
+    font-weight: 400;  
+    font-size: 18px;
+    color: #D0CECE;
+}
+
+.pasword::placeholder {
+    color:  #D0CECE;
+}
+.button_entry{
+    width: 278px;
+    height: 52px;
+    border-radius: 6px;
+    background:  #580EA2;
+    border: 0px;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+.button_entry:hover {
+    background: #3F007D;
+}
+.button_reg{
+    width: 278px;
+    height: 52px;
+    border-radius: 6px;   
+    background:  #FFFFFF;
+    border: 0px;
+    font-size: 18px;
+    color: black;
+    border: solid 1px #D0CECE;;
+}
+
+.button_reg:hover {
+    background: #D0CECE;
+}
