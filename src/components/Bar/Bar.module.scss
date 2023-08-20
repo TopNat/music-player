@@ -1,11 +1,3 @@
-.bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(28, 28, 28, 0.5);
-}
-
 .bar_light {
     position: absolute;
     bottom: 0;
@@ -14,6 +6,11 @@
     background: rgba(255, 255, 255, 0.5);
 }
 .bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(28, 28, 28, 0.5);    
 
     &__content {
         display: flex;
@@ -241,4 +238,38 @@
 }
 
 
+._btn {
+    cursor: pointer;
+}
 
+.volume {
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__image {
+        width: 13px;
+        height: 18px;
+        margin-right: 17px;
+    }
+
+    &__svg {
+        width: 13px;
+        height: 18px;
+        fill: transparent;
+
+    }
+
+    &__progress {
+        width: 109px;
+    }
+
+    &__progress-line {
+        width: 109px;
+        
+    }
+}

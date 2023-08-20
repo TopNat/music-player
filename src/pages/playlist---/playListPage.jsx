@@ -7,11 +7,29 @@ import Bar from '../../components/Bar/Bar';
 import { Search } from '../../components/Search';
 import SideBar from '../../components/SideBar/SideBar';
 import { useParams } from 'react-router-dom';
+//import { useGetAllMusicQuery } from '../../services/music';
 
 function playListPage() {
     const params = useParams();
 
-    console.log(params.id);
+   // console.log(params.id);
+
+   /* const { data, error, isLoading } = useGetAllMusicQuery();
+    const isEmptyList = !isLoading && !data?.length;
+
+    if (isLoading) {
+        return <p>Loading...</p>;
+    }
+    if (error) {
+        return <p>{error.message}</p>;
+    }
+    if (isEmptyList) {
+        return <p>No music, yay!</p>;
+    }
+
+    console.log(data);*/
+
+    
     return (
         <div className={s.container}>
             <main className={s.main}>       
@@ -35,7 +53,7 @@ function playListPage() {
             </div>           
                 <div className={`${s.content__playlist} ${s.playlist}`}>  
                 {
-                    playlistData.map((item,index) => <PlaylistItem track={item.track} author={item.author} album={item.album} time={item.time} key={index} />)
+                    playlistData.map((item,index) => <PlaylistItem track={item.name} author={item.author} album={item.album} time={item.time} key={index} />)
                 
                 }            
                 </div>  

@@ -1,4 +1,5 @@
 import { useThemeContext } from '../../ThemeContext';
+import { AccessCheck } from '../../services/storage';
 import s from './NavMenu.module.scss';
 import { NavLink } from "react-router-dom";
 
@@ -11,9 +12,9 @@ const { theme, toggleTheme } = useThemeContext();
             <li className={s.menu__item}>
                 <NavLink to="/" className={theme.name === 'dark' ? `${s.menu__link}` : `${s.menu__link_dark}`}
                 >Главное</NavLink></li>
-            <li className={s.menu__item}><NavLink to="/playlist/5" className={theme.name === 'dark' ? `${s.menu__link}` : `${s.menu__link_dark}`}>Мой плейлист</NavLink></li>
+            <li className={s.menu__item}><NavLink to="/favorite" className={theme.name === 'dark' ? `${s.menu__link}` : `${s.menu__link_dark}`}>Мой плейлист</NavLink></li>
             {
-                localStorage.getItem('user') ? 
+                AccessCheck() ? 
                 <li className={s.menu__item}><NavLink to="/exit" className={theme.name === 'dark' ? `${s.menu__link}` : `${s.menu__link_dark}`}>Выйти</NavLink></li>
                 :
                 <li className={s.menu__item}><NavLink to="/entry" className={theme.name === 'dark' ? `${s.menu__link}` : `${s.menu__link_dark}`}>Войти</NavLink></li>

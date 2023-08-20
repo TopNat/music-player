@@ -1,8 +1,39 @@
+import { useDispatch } from 'react-redux';
 import { useThemeContext } from '../../ThemeContext';
+import { addIdTrack } from '../../store/playListSlice';
 import s from './PlaylistItem.module.scss';
+import { useLikeTrackMutation, useRefreshTokenMutation } from '../../services/music';
+//import { getToken } from '../../services/storage';
 
 const PlaylistItem = (props) => {
+   
     const { theme } = useThemeContext();
+    const dispatch = useDispatch ();
+    const [setLike] = useLikeTrackMutation();
+    const [refresh] = useRefreshTokenMutation();
+    const idUser = localStorage.getItem('id');   
+    let userLikes = props.stared_user;  
+    userLikes = userLikes.map((item) => item.id);  
+    const isFavorite = userLikes.includes(Number(idUser));  
+  // console.log(isFavorite);
+
+    function setIdTreck(event,  idTrack, trackFile) {
+        event.preventDefault();    
+       dispatch(addIdTrack ({idTrack: idTrack, pathTrack: trackFile}));
+    }
+
+    const idTrack = props.id;
+
+    function like() {        
+        const refToken=localStorage.getItem('refresh');      
+       // console.log(refToken);
+        refresh(refToken).then((data) => {
+            const newToken = data.data.access;
+            localStorage.setItem('access', newToken);
+           // console.log(newToken);
+            setLike({id: idTrack, access: newToken})})        
+        
+    }
 
     return (
         <div className={s.playlist__item}>
@@ -13,20 +44,27 @@ const PlaylistItem = (props) => {
                         <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
                     </svg>
                 </div>
-                <div className={s['track__title-text']}>
+                <div className={s['track__title-text']}  onClick={(event) => setIdTreck(event, props.id, props.track_file)}>
                     <a className={theme.name === 'dark' ? `${s['track__title-link']}` : `${s['track__title-link_dark']}`} href="http://">{props.track} <span className={s['track__title-span']}></span></a>
                 </div>
             </div>
             <div className={s.track__author}>
                 <a className={theme.name === 'dark' ? `${s['track__author-link']}` : `${s['track__author-link_dark']}`} href="http://">{props.author}</a>
             </div>
-            <div className={s.track__album}>
+            <div className={s.track__album} onClick={like}>
                 <a className={s['track__album-link']} href="http://">{props.album}</a>
             </div>
-            <div className={s.track__time}>
+            <div className={s.track__time} >
+                {isFavorite ? (
+                 <svg className={s['track__time-svg']} alt="time">
+                    <use xlinkHref="img/icon/sprite.svg#icon-dislike"></use>
+                </svg>
+                ) : (
                 <svg className={s['track__time-svg']} alt="time">
                     <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
-                </svg>
+                </svg> )
+               
+                }
                 <span className={s['track__time-text']}>{props.time}</span>
             </div>
         </div>

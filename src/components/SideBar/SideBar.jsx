@@ -11,7 +11,7 @@ const { theme } = useThemeContext();
     return (
     <div className={`${s.main__sidebar} ${s.sidebar}`}>
         <div className={s.sidebar__personal}>
-            <p className={theme.name === 'light' ? `${s['sidebar__personal-name_light']}` : `${s['sidebar__personal-name']}`}>Sergey.Ivanov</p>
+            <p className={theme.name === 'light' ? `${s['sidebar__personal-name_light']}` : `${s['sidebar__personal-name']}`}>{localStorage.getItem('username')}</p>
             <div className={s.sidebar__avatar}>                
             </div>
         </div>

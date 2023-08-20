@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 
 export const themes = { 
-    light: {
+    dark: {
         color: '#000000' ,
         background: '#ffffff',
-        name: 'light',
+        name: 'light',       
     },
-    dark: {
+    light: {
         color: '#ffffff' ,
         background:  '#181818',
-        name: 'dark',
+        name: 'dark',      
     }
 };
 
@@ -20,6 +20,7 @@ export const ThemeContext = React.createContext({
 
 export const useThemeContext = () => {
     const theme = useContext(ThemeContext);
+    //console.log(theme);
     if (!theme) return theme.dark;
     return theme;
 }

@@ -15,11 +15,14 @@ const NavBar = () => {
     return (
             <nav className={`${s.main__nav} ${s.nav}`}  style={{backgroundColor: `${theme.background}`, color: `${theme.color}`}}>
                 <div className={`${s.nav__logo} ${s.logo}`}>
-                   
-                    <img className={s.logo__image} src="img\logo.png" alt="logo" />                
-                                         
+                    {theme.name === 'light' ? (
+                        <img className={s.logo__image} src="img/logo_b.png" alt="logo" /> 
+                        ) : (
+                        <img className={s.logo__image} src="img/logo.png" alt="logo" />                
+                        ) }                  
                     
                 </div>
+              
                 <div className={`${s.nav__burger} ${s.burger}`}  onClick={() => toggleVisibleMenu("menu")}>
                     <span className={s.burger__line}></span>
                     <span className={s.burger__line}></span>

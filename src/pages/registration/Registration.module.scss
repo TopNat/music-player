@@ -39,6 +39,7 @@
     font-size: 18px;
     color: #D0CECE;
     margin-bottom: 38px;
+    outline: none;
 
 }
 
@@ -54,6 +55,7 @@
     font-size: 18px;
     color: #D0CECE;
     margin-bottom: 40px;
+    outline: none;
 }
 .pasword::placeholder {
     color:  #D0CECE;
@@ -72,4 +74,9 @@
 }
 .button_reg:hover {
     background: #3F007D;
+}
+
+.error {
+    color: #822525;
+    font-weight: bold;;
 }
