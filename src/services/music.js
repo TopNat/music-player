@@ -19,10 +19,16 @@ export const musicApi = createApi({
               method: 'POST',                     
           })
         }),
+        dislikeTrack: builder.mutation({
+          query: ({id, access}) => ({                 
+              url: `track/${id}/favorite/`,            
+              headers: { authorization: `Bearer ${access}` },
+              method: 'DELETE',                     
+          })
+        }),
         getAllFavorite: builder.query({
           query: ({access}) => ({
-            url: 'track/favorite/all/',
-            method: 'GET',
+            url: 'track/favorite/all/',           
             headers: { authorization: `Bearer ${access}` }
           })
         }),
@@ -70,6 +76,6 @@ export const userApi = createApi({
   })
 })
 
-export const { useGetAllMusicQuery, useGetSelectionMusicQuery, useLikeTrackMutation, useGetAllFavoriteQuery } = musicApi;
+export const { useGetAllMusicQuery, useGetSelectionMusicQuery, useLikeTrackMutation, useGetAllFavoriteQuery, useDislikeTrackMutation } = musicApi;
 
 export const { useSignupMutation, useLoginMutation, useGetTokenMutation, useRefreshTokenMutation } = userApi;

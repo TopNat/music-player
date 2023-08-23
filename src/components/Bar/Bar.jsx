@@ -41,7 +41,7 @@ const Bar = () => {
         }, 1000);    
     })
 
-    console.log(idTrack);
+    //console.log(idTrack);
 
     const volume = (event) => {
         const target = event.target.value / 100
