@@ -14,11 +14,12 @@ const Bar = () => {
 
     const refProgress = useRef(null);
     const refAudio = useRef(null);    
+    //const refShuffle = useRef(null);   
     const { theme } = useThemeContext();
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);  
-   // const [btnRepeat, setBtnRepeat] = useState(false);
-  //  const [btnShuffle, setBtnShuffle] = useState(false);    
+    const [btnRepeat, setBtnRepeat] = useState(false);
+    const [btnShuffle, setBtnShuffle] = useState(false);    
     const dispatch = useDispatch (); 
 
     const playListPlay = useSelector((state) => state.addPlayListMusic.playList);
@@ -86,9 +87,21 @@ const Bar = () => {
        }
       }
 
+      const repeat = () => {
+       // console.log(btnRepeat);
+        btnRepeat ? setBtnRepeat(false) : setBtnRepeat(true);
+
+      }
+
+      const shuffle = () => {
+       // console.log(btnShuffle);
+        btnShuffle ? setBtnShuffle(false) : setBtnShuffle(true);
+        
+      }
+
     return (
 <div className={theme.name === 'dark' ? `${styles.bar}` : `${styles.bar_light}`}>
-       <audio ref={refAudio} src={pathTrack} autoPlay onPlay={() => setIsPlaying(true)} onPause={()=>setIsPlaying(false)}></audio>
+       <audio ref={refAudio} src={pathTrack} autoPlay onPlay={() => setIsPlaying(true)} onPause={()=>setIsPlaying(false)} onEnded={next}></audio>
     <div className={styles.bar__content}>
    
         <div className={styles['bar__player-progress']}>
@@ -122,13 +135,14 @@ const Bar = () => {
                         </svg>                       
                     </div>
                     <div className={`${styles['player__btn-repeat']} ${styles['_btn-icon']}`}>
-                        <svg className={styles['player__btn-repeat-svg']} alt="repeat">
-                            <use xlinkHref="img/icon/sprite.svg#icon-repeat"></use>
+                        <svg className={styles['player__btn-repeat-svg']} alt="repeat" onClick={repeat}>
+                            <use xlinkHref={btnRepeat ? "img/icon/sprite.svg#icon-repeat_activ" : "img/icon/sprite.svg#icon-repeat"}></use>
                         </svg>                       
                     </div>
                     <div className={`${styles['player__btn-shuffle']} ${styles['_btn-icon']}`}>
-                        <svg className={styles['player__btn-shuffle-svg']} alt="shuffle">
-                            <use xlinkHref="img/icon/sprite.svg#icon-shuffle"></use>
+                     
+                        <svg className={styles['player__btn-shuffle-svg']} alt="shuffle" onClick={shuffle}>
+                            <use xlinkHref={btnShuffle ? "img/icon/sprite.svg#icon-shuffle_activ" : "img/icon/sprite.svg#icon-shuffle"}></use>
                         </svg>
                     </div>
                 </div>

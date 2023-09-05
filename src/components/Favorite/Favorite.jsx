@@ -1,4 +1,4 @@
-import Filter from "../Filter";
+//import Filter from "../Filter";
 
 //import Skeleton from "./../Skeleton/Skeleton";
 import s from './Favorite.module.scss';
@@ -21,7 +21,7 @@ const Favorite = (/*{isLoading}*/) => {
         <div className={`${s.main__centerblock} ${s.centerblock}`}>
             <Search />
             <h2 className={s.centerblock__h2}>{titlePlayList[4].title}</h2>
-            <Filter />           
+           
             {isLoad ? ( <p>Loading...</p>)
             : (
                 isEmpty ? (<p>No music!</p>) : (

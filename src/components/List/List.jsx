@@ -7,10 +7,12 @@ import { addPlayListMusic } from '../../store/playListSlice';
 
 const List = ({data}) => {
    const dispatch = useDispatch();
+   
 
     function setListTrack(event) {
         event.preventDefault();       
         dispatch(addPlayListMusic({playList: data}));
+
         //dispatch(addTrack({track:}));
        // console.log(event.target);
 

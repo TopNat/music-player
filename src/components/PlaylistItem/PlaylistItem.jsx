@@ -22,7 +22,7 @@ const PlaylistItem = (props) => {
     if (props.stared_user) {
        // console.log(props.stared_user);
         userLikes = userLikes.map((item) => item.id); 
-        console.log(userLikes);
+        //console.log(userLikes);
         isFavorite = userLikes.includes(Number(idUser)); 
 
        // console.log('isFavorite=' + isFavorite);  

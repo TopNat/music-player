@@ -33,7 +33,6 @@ const toggleTheme = () => {
           <Route path="/reg" element={<Registration />} />        
           <Route path="/test" element={<Test />} />              
           <Route path="/exit" element={<ProtectedRoute ><Exit /></ProtectedRoute>} />
-
           <Route path="/" element={<ProtectedRoute > <MainP /></ProtectedRoute>} />  
           <Route path="/playlist/:id" element={<ProtectedRoute > <MainP/></ProtectedRoute>} />  
           <Route path="/favorite" element={<ProtectedRoute > <MainP/></ProtectedRoute>} />  

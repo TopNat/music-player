@@ -33,6 +33,7 @@ function Entry() {
           };*/
       
       //  console.log(resLogin);
+      
       const formLogin= document.getElementById('login').value;
       const formPassword = document.getElementById('password').value;
  
