@@ -1,5 +1,5 @@
 import Filter from "../Filter";
-
+import React from 'react';
 //import Skeleton from "./../Skeleton/Skeleton";
 import s from './PlayListComp.module.scss';
 import { titlePlayList } from "../../constants";
