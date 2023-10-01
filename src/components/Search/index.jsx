@@ -1,5 +1,6 @@
 import { useThemeContext } from '../../ThemeContext';
 import s from '../Search/Search.module.scss';
+import React from 'react';
 
 export const Search = () => {
     const { theme } = useThemeContext();
