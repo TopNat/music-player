@@ -104,7 +104,16 @@
         background-color: #9A48F1;
         text-align: center;
     }
-
+    &__filter-genre_count {
+        position: absolute; 
+        top: -10px;
+        left: 455px;
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        background-color: #9A48F1;
+        text-align: center;
+    }
     &__filter-genre {
         position: absolute;        
         top: 49px;

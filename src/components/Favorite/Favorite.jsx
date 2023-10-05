@@ -7,8 +7,6 @@ import { Search } from "../Search";
 import { useGetAllFavoriteQuery/*, useRefreshTokenMutation */ } from "../../services/music";  
 import List from "../List/List";
 
-
-
 const Favorite = (/*{isLoading}*/) => {
   
     const access=localStorage.getItem('access');   

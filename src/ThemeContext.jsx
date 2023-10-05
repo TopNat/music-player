@@ -20,7 +20,7 @@ export const ThemeContext = React.createContext({
 
 export const useThemeContext = () => {
     const theme = useContext(ThemeContext);
-    //console.log(theme);
+    
     if (!theme) return theme.dark;
     return theme;
 }

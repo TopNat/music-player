@@ -1,10 +1,9 @@
 .search {
-
     &__svg {
         width: 17px;
         height: 17px;
         margin-right: 5px;
-        stroke: #FFFFFF;
+        stroke: #ffffff;
         fill: transparent;
     }
 
@@ -17,7 +16,13 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
-        color: #FFFFFF;
+        color: #ffffff;
+
+        &:focus {
+            border: none;
+            outline: 0;
+            outline-offset: 0;
+        }
 
         &::placeholder {
             background-color: transparent;
@@ -45,20 +50,17 @@
                 font-weight: 400;
                 font-size: 16px;
                 line-height: 24px;
-               
-            }     
-    }   
+            }
+        }
     }
 }
 .centerblock {
-
     &__search {
         width: 100%;
-        border-bottom: 1px solid #4E4E4E;
+        border-bottom: 1px solid #4e4e4e;
         margin-bottom: 51px;
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-
 }

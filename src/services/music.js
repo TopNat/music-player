@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+const TRECKS_TAGS = 'Tracks';
 
 export const musicApi = createApi({
     reducerPath: "musicApi",
@@ -7,30 +8,35 @@ export const musicApi = createApi({
     }),
     endpoints: (builder) => ({
         getAllMusic: builder.query({
-          query: () => "track/all"
+          query: () => "track/all",
+          providesTags: () => [TRECKS_TAGS]
         }),
         getSelectionMusic: builder.query({
-          query: ({id}) => `selection/${id}/`
+          query: ({id}) => `selection/${id}/`,
+          providesTags: () => [TRECKS_TAGS]
         }),
         likeTrack: builder.mutation({
           query: ({id, access}) => ({                 
               url: `track/${id}/favorite/`,            
               headers: { authorization: `Bearer ${access}` },
               method: 'POST',                     
-          })
+          }),
+          invalidatesTags: [TRECKS_TAGS]
         }),
         dislikeTrack: builder.mutation({
           query: ({id, access}) => ({                 
               url: `track/${id}/favorite/`,            
               headers: { authorization: `Bearer ${access}` },
               method: 'DELETE',                     
-          })
+          }),
+          invalidatesTags: [TRECKS_TAGS]
         }),
         getAllFavorite: builder.query({
           query: ({access}) => ({
             url: 'track/favorite/all/',           
             headers: { authorization: `Bearer ${access}` }
-          })
+          }),
+          providesTags: () => [TRECKS_TAGS]
         }),
     }),    
 });
